@@ -3,12 +3,12 @@
 import 'dart:io';
 
 import 'package:chat/components/user_image_picker.dart';
-import 'package:chat/models/auth_form_data.dart';
+import 'package:chat/core/models/auth_form_data.dart';
 import 'package:flutter/material.dart';
 
 class AuthForm extends StatefulWidget {
   const AuthForm(this.onSubmit, {Key? key}) : super(key: key);
-  final void Function(AuthFormData) onSubmit;
+  final Future<void> Function(AuthFormData) onSubmit;
 
   @override
   State<AuthForm> createState() => _AuthFormState();
