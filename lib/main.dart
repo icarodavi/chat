@@ -1,3 +1,4 @@
+import 'package:chat/pages/auth_page.dart';
 import 'package:chat/pages/loading_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = ThemeData(
-      primarySwatch: Colors.lightGreen,
-    );
+        primarySwatch: Colors.lightGreen,
+        colorScheme: ThemeData().colorScheme.copyWith(
+              primary: Colors.lightGreen,
+              secondary: Colors.white,
+              inversePrimary: Colors.white,
+            ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Chat',
       theme: theme.copyWith(),
-      home: const LoadingScreenPage(),
+      home: const AuthPage(),
     );
   }
 }
